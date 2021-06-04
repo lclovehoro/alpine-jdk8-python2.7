@@ -9,7 +9,7 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
     ALPINE_GLIBC_BASE_PACKAGE_FILENAME="glibc-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_BIN_PACKAGE_FILENAME="glibc-bin-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_I18N_PACKAGE_FILENAME="glibc-i18n-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
-    apk add --no-cache --virtual build-dependencies wget ca-certificates gcc git libc-dev libffi-dev make libressl-dev zlib-dev openssl gettext \
+    apk add --no-cache --virtual build-dependencies wget curl ca-certificates gcc git libc-dev libffi-dev make libressl-dev zlib-dev openssl gettext \
     && wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz \
     && tar -xf Python-2.7.18.tgz \
     && rm -rf Python-2.7.18.tgz \
