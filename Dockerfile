@@ -21,6 +21,8 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
     && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py \
     && python get-pip.py \
     && rm -rf get-pip.py \
+    && ln -s /usr/local/python2.7.18/bin/pip /usr/bin/pip \
+    && pip install python-jenkins \
     && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget \
         "$ALPINE_GLIBC_BASE_URL/$ALPINE_GLIBC_PACKAGE_VERSION/$ALPINE_GLIBC_BASE_PACKAGE_FILENAME" \
